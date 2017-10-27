@@ -4,7 +4,7 @@
 ```
 ## js基本数据类型
 ```
-String Number Boolean Object Undefined Function Null
+String / Number / Boolean / Object/  Undefined / Function / Null
 ```
 ## 什么是闭包
 ```
