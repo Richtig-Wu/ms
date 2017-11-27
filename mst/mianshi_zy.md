@@ -98,11 +98,15 @@ c.Method(); //使用方法
 ```
 ## 原型链
 ```
-JavaScrip可以采用构造器(constructor)生成一个新的对象,每个构造器都拥有一个prototype属性,而每个通过此构造器生成的对象都有一个指向该构造器原型(prototype)的内部私有的链接(proto),而这个prototype因为是个对象,它也拥有自己的原型,这么一级一级直到原型为null,这就构成了原型链
+JavaScrip可以采用构造器(constructor)生成一个新的对象,每个构造器都拥有一个prototype属性,
+而每个通过此构造器生成的对象都有一个指向该构造器原型(prototype)的内部私有的链接(proto),
+而这个prototype因为是个对象,它也拥有自己的原型,这么一级一级直到原型为null,这就构成了原型链
 ```
 ## Object原型指向谁
 ```
-每个构造函数内部均有一个prototype原型指针，指向该类型的原型对象C.prototype。原型对象C.prototype中包含一个回指向构造函数的指针constructor。这样就实现了构造函数和原型对象间的双向绑定。每个实例对象内部也包含一个指向原型对象C.prototype的指针。
+每个构造函数内部均有一个prototype原型指针，指向该类型的原型对象C.prototype。原型对象C.
+prototype中包含一个回指向构造函数的指针constructor。这样就实现了构造函数和原型对象间的双向绑定。
+每个实例对象内部也包含一个指向原型对象C.prototype的指针。
 ```
 ## typeof
 ```

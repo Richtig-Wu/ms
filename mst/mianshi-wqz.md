@@ -70,3 +70,46 @@
 
     14.BE
 ```
+
+
+### 如何解决Trident(IE)和webKit引擎对样式表padding属性的支持不同问题?
+```
+答:用通配符*来设置各个标签的内外补丁是0或者用!important解决
+Firefox中：容器占的宽度=内容宽度+padding宽度+border宽度
+IE中：内容宽度=您定义的容器宽度(Internet Explorer ’width’)-padding宽度-border宽度 ;
+注意:如果IE中定义 width:120px;padding:5px 的话，所显示的宽度就是120px.即padding:5px是在width里面。而Firefox中，上面这个定义，显示宽度就是 125 px;
+```
+
+### 如何解决例如tech.QQ.com 和 web.QQ.com 之间的跨域登录信息问题?
+```
+因为两网页一级域名相同,只是二级域名不同,所以我们可以设置document.domain来共享Cookie,如设置相同的document.domain
+```
+
+### 请问cookies/ sessionStorage / localStorage的作用和区别?
+```
+作用:
+  1.cookie:
+  存储在用户本地终端上的数据。指某些网站为了辨别用户身份，进行session跟踪而存储在本地终端上的数据，
+  通常经过加密。一般应用最典型的案列就是判断注册用户是否已经登过该网站。
+  2.sessionStorage:
+  针对一个session的数据存储,当用户关闭浏览器窗口后，数据会被删除。
+  3.localStorage:
+  没有时间限制的数据存储
+共同点：
+都是保存在浏览器端，且同源的。
+不同点:
+  1.cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）
+    的概念,可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，
+    所以cookie只适合保存很小的数据，如会话标识。
+  2.sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。sessionStorage和localStorage 虽然也有存储
+    大小的限制，但比cookie大得多，可以达到5M或更大
+  3.数据有效期不同:
+    cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭;
+    sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持；
+    localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据.
+  4.作用域不同:
+    cookie也是在所有同源窗口中都是共享的。
+    sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；
+    localStorage 在所有同源窗口中都是共享的；
+    Web Storage 支持事件通知机制，可以将数据更新的通知发送给监听者。W
+```
